@@ -105,4 +105,7 @@ Here's where everything lives:
 
 ## 📜 Origin
 
-Based on the original [FunGraphics](https://github.com/isc-hei/FunGraphics) library for Scala/Java developed by P.-A. Mudry. Ported with ❤️ to Python.
+Based on the original [FunGraphics](https://github.com/isc-hei/FunGraphics) library for Scala/Java developed by P.-A. Mudry.
+
+🤖 **Ported to Python with the help of Artificial Intelligence.**
+This project was converted from Scala to Python using advanced AI coding assistants, ensuring a faithful yet Pythonic adaptation of the original library.
