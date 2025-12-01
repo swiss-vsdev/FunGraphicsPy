@@ -64,6 +64,8 @@ class FunGraphics:
         self.color = self._rgb_to_hex(color)
         
     def setPixel(self, x, y, color=None):
+        if self.window_closed:
+            return
         c = self.color if color is None else self._rgb_to_hex(color)
         # Draw a 1x1 rectangle (line might be invisible if length 0)
         self.canvas.create_rectangle(x, y, x+1, y+1, fill=c, outline="")
@@ -72,26 +74,40 @@ class FunGraphics:
         self.line_width = int(width)
         
     def drawLine(self, x1, y1, x2, y2):
+        if self.window_closed:
+            return
         self.canvas.create_line(x1, y1, x2, y2, fill=self.color, width=self.line_width)
         
     def drawRect(self, x, y, width, height):
+        if self.window_closed:
+            return
         self.canvas.create_rectangle(x, y, x+width, y+height, outline=self.color, width=self.line_width)
         
     def drawFillRect(self, x, y, width, height):
+        if self.window_closed:
+            return
         self.canvas.create_rectangle(x, y, x+width, y+height, fill=self.color, outline="")
         
     def drawCircle(self, x, y, diameter):
+        if self.window_closed:
+            return
         self.canvas.create_oval(x, y, x+diameter, y+diameter, outline=self.color, width=self.line_width)
         
     def drawFilledCircle(self, x, y, diameter):
+        if self.window_closed:
+            return
         self.canvas.create_oval(x, y, x+diameter, y+diameter, fill=self.color, outline="")
         
     def drawString(self, x, y, text, font_size=20, color=None):
+        if self.window_closed:
+            return
         c = self.color if color is None else self._rgb_to_hex(color)
         font = (self.font_name, font_size)
         self.canvas.create_text(x, y, text=text, fill=c, font=font, anchor="nw")
         
     def drawPicture(self, x, y, bitmap):
+        if self.window_closed:
+            return
         # Centered drawing
         if bitmap.image:
             self.canvas.create_image(x, y, image=bitmap.image, anchor="c")
