@@ -122,8 +122,13 @@ class FunGraphics:
         Process events and update display.
         Should be called in the game loop.
         """
-        self.root.update_idletasks()
-        self.root.update()
+        try:
+            self.root.update_idletasks()
+            self.root.update()
+        except tk.TclError:
+            # Window closed
+            import sys
+            sys.exit(0)
         
         # Sleep to maintain FPS
         current_time = time.time()

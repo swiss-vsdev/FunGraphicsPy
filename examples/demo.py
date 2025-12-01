@@ -33,7 +33,7 @@ class Demo:
         self.size = 1
         
     def run(self):
-        self.fg.setPixel(10, 10)
+        # self.fg.setPixel(10, 10) # Moved inside loop
         
         i = 1
         direction = 1
@@ -50,6 +50,7 @@ class Demo:
                 self.size = 0 if self.size == 0 else self.size - 1
                 
             self.fg.clear((255, 255, 255)) # White
+            self.fg.setPixel(10, 10) # Draw a single pixel
             
             self.fg.setColor((255, 0, 0)) # Red
             self.fg.drawFilledCircle(50, 50, 100 + self.size)
