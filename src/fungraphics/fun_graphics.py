@@ -30,6 +30,10 @@ class FunGraphics:
         self.font_name = "Arial"
         self.font_size = 20
         
+        # Window state
+        self.window_closed = False
+        self.root.protocol("WM_DELETE_WINDOW", self._on_window_close)
+        
         # Input handling
         self.key_listeners = []
         self.root.bind("<KeyPress>", self._on_key_press)
@@ -47,6 +51,8 @@ class FunGraphics:
         return "#000000"
         
     def clear(self, color=(255, 255, 255)):
+        if self.window_closed:
+            return
         self.canvas.delete("all")
         self.canvas.configure(bg=self._rgb_to_hex(color))
         
@@ -116,17 +122,29 @@ class FunGraphics:
         for listener in self.key_listeners:
             if hasattr(listener, 'keyReleased'):
                 listener.keyReleased(mock_event)
+    
+    def _on_window_close(self):
+        """Handle window close event."""
+        self.window_closed = True
+        self.root.destroy()
+        import sys
+        sys.exit(0)
         
     def syncGameLogic(self, fps):
         """
         Process events and update display.
         Should be called in the game loop.
         """
+        if self.window_closed:
+            import sys
+            sys.exit(0)
+        
         try:
             self.root.update_idletasks()
             self.root.update()
         except tk.TclError:
             # Window closed
+            self.window_closed = True
             import sys
             sys.exit(0)
         
