@@ -171,6 +171,8 @@ class FunGraphics:
         Get the dimensions of a text string.
         Returns a tuple (width, height).
         """
+        if self.window_closed:
+            return (0, 0)
         if font_size is None:
             font_size = self.font_size
         font = (self.font_name, font_size)

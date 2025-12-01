@@ -103,9 +103,21 @@ Here's where everything lives:
 
 ---
 
-## 📜 Origin
+## 📜 Origin & Development
 
-Based on the original [FunGraphics](https://github.com/isc-hei/FunGraphics) library for Scala/Java developed by P.-A. Mudry.
+Based on the original [FunGraphics](https://github.com/isc-hei/FunGraphics) library for Scala/Java developed by **P.-A. Mudry** at HES-SO Valais//Wallis.
 
-🤖 **Ported to Python with the help of Artificial Intelligence.**
-This project was converted from Scala to Python using advanced AI coding assistants, ensuring a faithful yet Pythonic adaptation of the original library.
+### 🤖 AI-Powered Python Port
+
+**This Python version was created entirely with the assistance of Artificial Intelligence.**
+
+The conversion from Scala/Java to Python was accomplished through:
+- **AI-driven code translation** from the original Scala implementation
+- **Automated feature implementation** to achieve 100% feature parity
+- **AI-assisted debugging** and optimization
+- **Intelligent adaptation** to Python idioms and best practices
+
+This project demonstrates the power of AI in software development, successfully porting a complete graphics library while maintaining full compatibility with the original API design.
+
+**Technologies**: Python 3.x, Tkinter, PIL/Pillow (optional)
+**AI Tools**: Advanced language models for code generation and problem-solving
