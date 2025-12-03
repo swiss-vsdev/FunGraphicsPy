@@ -1,3 +1,4 @@
+# Scala/Java build artifacts
 build/
 bin/
 .gradle/
@@ -6,4 +7,19 @@ bin/
 .project
 .settings/
 *.sc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+*.egg
+
+# OS
 .DS_Store

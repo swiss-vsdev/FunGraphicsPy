@@ -5,7 +5,7 @@ import time
 # Add src to path to import fungraphics
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from fungraphics.fun_graphics import FunGraphics
+from fungraphics import FunGraphics
 from dialogs import Dialogs
 
 class WordManager:
@@ -40,7 +40,7 @@ class HangMan:
         self.current_step = 0
         self.window_width = 300
         self.window_height = 300
-        self.display = FunGraphics(self.window_width, self.window_height, "HangMan")
+        self.display = FunGraphics(self.window_width, self.window_height, title="HangMan")
         self.wm = WordManager()
         self.running = False
 
@@ -78,7 +78,7 @@ class HangMan:
         self.display.drawString(20, 40, f"Word : {self.wm.user_word}")
         
         if self.running:
-             result_text = "LOOSER" if self.current_step == self.MAX_STEPS else "YOU WON !"
+             result_text = "LOSER" if self.current_step == self.MAX_STEPS else "YOU WON !"
              self.display.drawString(20, 260, f"Result : {result_text}")
              
         # Force update
@@ -114,7 +114,7 @@ class HangMan:
                 self.update_graphics_view()
             
             if self.current_step == self.MAX_STEPS:
-                print("LOOOOSER")
+                print("LOSER")
                 game_status = False
                 
             self.running = True

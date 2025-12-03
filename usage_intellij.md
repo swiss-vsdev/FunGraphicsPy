@@ -40,13 +40,22 @@ import os
 # Ensure src is in the path if you haven't marked it as Sources Root
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from fungraphics.fun_graphics import FunGraphics
+from fungraphics import FunGraphics
 
 def main():
-    fg = FunGraphics(400, 300, "IntelliJ Setup Test")
+    fg = FunGraphics(400, 300, title="IntelliJ Setup Test")
+    fg.setColor((0, 200, 0))
     fg.drawString(50, 150, "It works!", font_size=30)
-    fg.display() # Keeps the window open until closed
+    
+    # Keep window open
+    while True:
+        fg.syncGameLogic(60)
 
 if __name__ == "__main__":
     main()
+```
+
+**Note**: If you marked `src` as Sources Root in step 3, you can use even simpler imports:
+```python
+from fungraphics import FunGraphics
 ```

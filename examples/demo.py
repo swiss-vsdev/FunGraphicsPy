@@ -4,7 +4,7 @@ import os
 # Add src to path to import fungraphics
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from fungraphics.fun_graphics import FunGraphics, K_s, K_LEFT, K_RIGHT
+from fungraphics import FunGraphics, K_s, K_LEFT, K_RIGHT
 
 class KeyAdapter:
     def __init__(self, demo):
@@ -27,7 +27,7 @@ class KeyAdapter:
 
 class Demo:
     def __init__(self):
-        self.fg = FunGraphics(500, 500, "Checking basic capabilities")
+        self.fg = FunGraphics(500, 500, title="Checking basic capabilities")
         self.pressedUp = False
         self.pressedDown = False
         self.size = 1
